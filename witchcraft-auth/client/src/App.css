@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700;900&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: #05030a;
+  color: #d1c5e6;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background: radial-gradient(circle at 50% 30%, #1a1025 0%, #05030a 70%),
+              repeating-linear-gradient(45deg, rgba(0,0,0,0.05) 0px, rgba(0,0,0,0.05) 2px, transparent 2px, transparent 4px);
+}
+
+.app-container {
+  background: linear-gradient(180deg, #110d1a 0%, #0a0812 100%);
+  padding: 3rem;
+  border-radius: 4px;
+  border: 2px solid #8e734a; 
+  outline: 1px solid #8e734a;
+  outline-offset: 4px;
+  max-width: 550px;
+  width: 90%;
+  position: relative;
+  box-shadow: 0 0 80px rgba(71, 33, 112, 0.4), inset 0 0 50px rgba(0,0,0,0.9);
+}
+
+.app-container::before {
+  content: "☽ O ☾";
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #05030a;
+  padding: 0 15px;
+  color: #e6c27a;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.5rem;
+  text-shadow: 0 0 15px #e6c27a;
+}
+
+h2, h3 { 
+  font-family: 'Cinzel Decorative', serif; 
+  text-align: center; 
+  color: #e6c27a;
+  text-shadow: 0 0 15px rgba(230, 194, 122, 0.4);
+  letter-spacing: 3px;
+  margin-top: 0;
+}
+
+.tabs { display: flex; gap: 15px; margin-bottom: 30px; }
+.tabs button { 
+  flex: 1; padding: 12px; background: #0a0812; 
+  border: 1px solid #4a3b69; color: #7a6b99; cursor: pointer; 
+  transition: all 0.4s ease;
+  font-family: 'Cinzel Decorative', serif; letter-spacing: 1px;
+  box-shadow: inset 0 0 10px rgba(0,0,0,0.8);
+}
+.tabs button:hover { color: #e6c27a; border-color: #8e734a; text-shadow: 0 0 8px rgba(230,194,122,0.5); }
+.tabs button.active { 
+  background: #1a1528; color: #e6c27a; font-weight: bold; 
+  border-color: #e6c27a; box-shadow: 0 0 20px rgba(230, 194, 122, 0.2), inset 0 0 15px rgba(230, 194, 122, 0.1);
+}
+
+input {
+  width: 100%; padding: 15px; margin-bottom: 25px; 
+  background: #05030a; border: none;
+  border-bottom: 2px solid #4a3b69; color: #e6c27a; 
+  box-sizing: border-box; font-family: 'Cormorant Garamond', serif; font-size: 1.2rem;
+  transition: all 0.4s; text-align: center; font-style: italic;
+}
+input:focus { outline: none; border-bottom: 2px solid #e6c27a; background: #0a0812; }
+input::placeholder { color: #4a3b69; }
+
+.ingredients-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px; margin-bottom: 30px; }
+.ingredient-btn {
+  background: linear-gradient(135deg, #151020 0%, #0a0812 100%);
+  border: 1px solid #4a3b69; border-radius: 4px; 
+  padding: 20px 10px; cursor: pointer; display: flex; flex-direction: column; 
+  align-items: center; color: #a89bbd; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 3px 3px 10px rgba(0,0,0,0.8);
+  height: 100px; justify-content: center;
+}
+.ingredient-btn:hover { 
+  background: linear-gradient(135deg, #2a1f40 0%, #110d1a 100%);
+  transform: translateY(-8px) scale(1.05); 
+  border-color: #e6c27a; color: #e6c27a;
+  box-shadow: 0 15px 20px rgba(0,0,0,0.9), 0 0 15px rgba(230, 194, 122, 0.3);
+}
+.ingredient-btn .emoji { font-size: 2.2rem; margin-bottom: 10px; filter: drop-shadow(0 0 8px rgba(0,0,0,0.8)); }
+.ingredient-btn .name { font-family: 'Cinzel Decorative', serif; font-size: 0.75rem; font-weight: bold; letter-spacing: 1px; }
+
+.cauldron-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.cauldron-pot {
+  background: radial-gradient(circle at bottom, #000000 0%, #1a1528 100%); 
+  border: 4px solid #3d315b;
+  border-top: none;
+  border-radius: 10px 10px 120px 120px; 
+  min-height: 100px; 
+  width: 80%;
+  display: flex; 
+  align-items: center;
+  justify-content: center; 
+  gap: 10px; 
+  padding: 30px 20px 20px; 
+  margin-bottom: 20px;
+  position: relative;
+  box-shadow: 0 20px 30px rgba(0,0,0,0.9), inset 0 -15px 30px rgba(43, 226, 119, 0.15);
+}
+
+.cauldron-pot::before {
+  content: '';
+  position: absolute;
+  top: -15px;
+  left: -5%;
+  width: 110%;
+  height: 30px;
+  background: #0a0812;
+  border: 4px solid #3d315b;
+  border-radius: 50%;
+  box-shadow: inset 0 5px 20px rgba(43, 226, 119, 0.3);
+  z-index: 1;
+}
+
+.cauldron-pot::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  border-radius: 10px 10px 120px 120px;
+  background: radial-gradient(ellipse at top, rgba(43, 226, 119, 0.25) 0%, transparent 70%);
+  animation: cauldronBrew 3s infinite alternate;
+  pointer-events: none;
+  z-index: 2;
+}
+
+@keyframes cauldronBrew {
+  0% { opacity: 0.7; filter: hue-rotate(0deg); }
+  100% { opacity: 1; filter: hue-rotate(20deg); }
+}
+
+.cauldron-item { 
+  font-size: 2.5rem; 
+  position: relative;
+  z-index: 3;
+  margin-top: 10px;
+  animation: splashPop 0.4s ease-out forwards, 
+             ingredientBob 3s ease-in-out infinite 0.4s; 
+  filter: drop-shadow(0 0 15px rgba(138, 43, 226, 0.9)); 
+}
+
+@keyframes splashPop {
+  0% { transform: scale(0.5); opacity: 0; }
+  60% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes ingredientBob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(8deg); }
+}
+
+.empty-text { 
+  color: rgba(143, 206, 0, 0.6); 
+  font-style: italic; 
+  font-size: 1.1rem; 
+  z-index: 3;
+  position: absolute;
+  top: 50%; 
+  transform: translateY(-50%);
+  text-shadow: 0 0 15px rgba(143, 206, 0, 0.4);
+}
+
+.flying-item {
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 2.5rem;
+  pointer-events: none; 
+  z-index: 9999; 
+  filter: drop-shadow(0 0 20px rgba(138, 43, 226, 1));
+  animation: flyToCauldron 1.5s cubic-bezier(0.3, 0.1, 0.3, 1) forwards;
+}
+
+@keyframes flyToCauldron {
+  0% { 
+    transform: translate(var(--startX), var(--startY)) scale(1) rotate(0deg); 
+    opacity: 1; 
+  }
+  50% { 
+    transform: translate(calc(var(--startX) + (var(--endX) - var(--startX)) / 2), calc(var(--startY) - 120px)) scale(1.6) rotate(180deg); 
+    opacity: 1; 
+  }
+  95% {
+    opacity: 1; 
+  }
+  100% { 
+    transform: translate(var(--endX), var(--endY)) scale(0.5) rotate(360deg); 
+    opacity: 0;
+  }
+}
+
+.toggle-cauldron { display: flex; gap: 10px; margin-bottom: 20px; }
+.toggle-cauldron button { 
+  flex: 1; background: transparent; border: none; padding: 10px; 
+  color: #4a3b69; cursor: pointer; font-family: 'Cinzel Decorative', serif; 
+  transition: all 0.3s; font-size: 0.9rem; letter-spacing: 1px;
+}
+.toggle-cauldron button.active-step { color: #8e734a; border-bottom: 1px solid #8e734a; text-shadow: 0 0 10px rgba(142, 115, 74, 0.5); }
+
+.action-btn {
+  width: 100%; padding: 18px; 
+  background: #05030a; 
+  color: #e6c27a; border: 1px solid #8e734a; border-radius: 2px; 
+  font-family: 'Cinzel Decorative', serif; font-size: 1.2rem; cursor: pointer; font-weight: bold;
+  letter-spacing: 2px; transition: all 0.4s ease; 
+  position: relative; overflow: hidden;
+}
+
+.action-btn::after {
+  content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
+  background: linear-gradient(to right, transparent, rgba(230, 194, 122, 0.1), transparent);
+  transform: rotate(45deg); transition: all 0.5s; left: -150%;
+}
+.action-btn:hover::after { left: 150%; }
+.action-btn:hover { background: #110d1a; box-shadow: 0 0 25px rgba(142, 115, 74, 0.4); text-shadow: 0 0 10px #e6c27a; transform: scale(1.02); }
+
+.clear-btn { 
+  background: transparent; border: none; color: #7a6b99; cursor: pointer; 
+  width: 100%; margin-bottom: 25px; font-style: italic; transition: color 0.3s;
+  font-size: 1rem; text-decoration: underline; text-decoration-color: #4a3b69;
+}
+.clear-btn:hover { color: #d64045; text-decoration-color: #d64045; }
+
+.message-box { 
+  padding: 15px; 
+  text-align: center; 
+  margin-bottom: 25px; 
+  border-radius: 2px; 
+  font-style: italic;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.error-msg {
+  background: rgba(214, 64, 69, 0.1); 
+  border: 1px solid #d64045; 
+  color: #d64045; 
+}
+
+.success-msg {
+  background: rgba(143, 206, 0, 0.1); 
+  border: 1px solid #8fce00; 
+  color: #8fce00; 
+  text-shadow: 0 0 10px rgba(143, 206, 0, 0.4);
+  font-size: 1.2rem;
+}
+
+.secret-content {
+  border-left: 3px solid #8e734a; 
+  padding-left: 20px; 
+  font-size: 1.2rem; 
+  color: #a89bbd; 
+  margin-bottom: 30px;
+}
