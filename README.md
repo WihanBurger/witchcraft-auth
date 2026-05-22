@@ -1,3 +1,5 @@
+Vid walkthrough https://drive.google.com/file/d/1TF7MbSroC97i-V02QPq3arwO3JerdOC7/view?usp=sharing
+
 🔮 Witchcraft Auth: The Ancient Grimoire
 
 A creative, dark-fantasy take on standard MERN stack authentication. Instead of typing a traditional password users authenticate by casting a specific "ritual sequence" of magical ingredients into an animated cauldron. 
