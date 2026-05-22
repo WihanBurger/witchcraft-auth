@@ -3,6 +3,7 @@ const mongoose = require("mongoose");
 const cors = require("cors");
 const bcrypt = require("bcrypt");
 require("dotenv").config();
+const jwt = require("jsonwebtoken");
 
 const app = express();
 app.use(cors());
@@ -67,6 +68,19 @@ app.post("/cast", async (req, res) => {
         if (!isMatch) return res.status(400).json({ message: "The ritual failed. Incorrect ingredients." });
 
         res.json({ message: "Login successful!", magicalName: witch.magicalName });
+
+        const token = jwt.sign(
+            { id: witch._id, email: witch.email }, 
+            process.env.JWT_SECRET, 
+            { expiresIn: "1h" }
+        );
+
+        res.json({ 
+            message: "Login successful!", 
+            magicalName: witch.magicalName,
+            token: token 
+        });
+        
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
