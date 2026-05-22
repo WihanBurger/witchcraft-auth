@@ -4,6 +4,8 @@ A creative, dark-fantasy take on standard MERN stack authentication. Instead of 
 
 This project was built to demonstrate full-stack integration, secure data hashing, and advanced React/CSS UI interactions.
 
+<img src="./screenshot.png" alt="The Ancient Grimoire Login Screen" width="600">
+
 ✨ Features
 
 Ritual-Based Authentication: Replaces standard text passwords with an array of visual ingredients (min 4, max 6).

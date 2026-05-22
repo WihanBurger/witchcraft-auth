@@ -80,7 +80,6 @@ app.post("/cast", async (req, res) => {
             magicalName: witch.magicalName,
             token: token 
         });
-        
     } catch (error) {
         res.status(500).json({ message: error.message });
     }
